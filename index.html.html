@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Indalo Boutique — Luxury Wigs & Nails | South Africa</title>
+  <meta name="description" content="Indalo Boutique — Luxury wigs, nails & custom-made products. Nationwide delivery in South Africa." />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #2c3e50;
+      --primary-light: #34495e;
+      --secondary: #8e6c4e;
+      --secondary-light: #a87c5c;
+      --accent: #c44536;
+      --light: #f8f9fa;
+      --dark: #212529;
+      --muted: #6c757d;
+      --border: #dee2e6;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      --transition: all 0.3s ease;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: var(--dark);
+      background-color: var(--light);
+      min-width: 0;
+      overflow-x: hidden;
+    }
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      background-color: white;
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .logo {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 22px;
+      box-shadow: var(--shadow);
+      flex-shrink: 0;
+    }
+    .brand-text h1 { font-size: 24px; color: var(--primary); margin-bottom: 4px; }
+    .brand-text p { font-size: 14px; color: var(--muted); }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      transition: var(--transition);
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 600;
+      transition: var(--transition);
+      position: relative;
+      padding: 4px 0;
+      display: inline-block;
+    }
+    nav a:hover { color: var(--accent); }
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: var(--accent);
+      transition: width .3s;
+    }
+    nav a:hover::after { width: 100%; }
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: var(--primary);
+      cursor: pointer;
+      margin-left: 10px;
+      z-index: 1101;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 80px 0;
+      background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.85)),
+                  url('images/waves/IMG-20250921-WA0020.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      min-height: 350px;
+      display: flex;
+      align-items: center;
+    }
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .hero h2 { font-size: 3rem; margin-bottom: 20px; font-weight: 700; }
+    .hero p { font-size: 1.25rem; margin-bottom: 30px; opacity: 0.9; }
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background-color: var(--accent);
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 600;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      margin: 0 10px 10px 0;
+      font-size: 1rem;
+    }
+    .btn:last-child { margin-right: 0; }
+    .btn:hover {
+      background-color: var(--secondary);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+    .btn-outline {
+      background-color: transparent;
+      border: 2px solid white;
+    }
+    .btn-outline:hover {
+      background-color: white;
+      color: var(--primary);
+    }
+
+    /* Section Title */
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .section-title h2 {
+      font-size: 2.25rem;
+      color: var(--primary);
+      margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
+    }
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      width: 70px;
+      height: 3px;
+      background-color: var(--accent);
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .section-title p {
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Products Section */
+    .products { padding: 80px 0; }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 30px;
+      width: 100%;
+    }
+    .product-card {
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+    .product-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+    }
+    .product-image {
+      width: 100%;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      background: var(--light);
+      flex-shrink: 0;
+    }
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+      display: block;
+    }
+    .product-card:hover .product-image img { transform: scale(1.05); }
+    .product-info {
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-width: 0;
+    }
+    .product-info h3 { font-size: 1.1rem; margin-bottom: 10px; color: var(--primary); }
+    .product-price { font-size: 1.25rem; font-weight: 700; color: var(--accent); margin-bottom: 15px; }
+    .add-to-cart { width: 100%; margin-top: auto; }
+
+    /* Cart Styles */
+    .cart-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: var(--accent);
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      z-index: 100;
+      transition: var(--transition);
+    }
+    .cart-btn:hover {
+      background-color: var(--secondary);
+      transform: scale(1.1);
+    }
+    .cart-count {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      background-color: var(--primary);
+      color: white;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .cart-drawer {
+      position: fixed;
+      top: 0;
+      right: -400px;
+      width: 380px;
+      max-width: 100vw;
+      height: 100vh;
+      background-color: white;
+      box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    .cart-drawer.open { right: 0; }
+    .cart-header {
+      padding: 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cart-header h3 { color: var(--primary); }
+    .close-cart {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: var(--muted);
+    }
+    .cart-items {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+      min-height: 0;
+    }
+    .cart-item {
+      display: flex;
+      gap: 15px;
+      padding: 15px 0;
+      border-bottom: 1px solid var(--border);
+      align-items: center;
+    }
+    .cart-item-image {
+      width: 80px;
+      height: 80px;
+      border-radius: 4px;
+      overflow: hidden;
+      background: var(--light);
+      flex-shrink: 0;
+    }
+    .cart-item-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .cart-item-details { flex: 1; min-width: 0; }
+    .cart-item-details h4 { font-size: 16px; margin-bottom: 5px; color: var(--primary); }
+    .cart-item-price { color: var(--accent); font-weight: 600; margin-bottom: 10px; }
+    .cart-item-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .quantity-btn {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .remove-item {
+      color: var(--accent);
+      background: none;
+      border: none;
+      cursor: pointer;
+      margin-left: auto;
+    }
+    .cart-footer {
+      padding: 20px;
+      border-top: 1px solid var(--border);
+    }
+    .cart-totals { margin-bottom: 20px; }
+    .cart-totals div { display: flex; justify-content: space-between; margin-bottom: 10px; }
+    .cart-total { font-weight: 700; font-size: 18px; color: var(--primary); }
+
+    /* Custom Orders Section */
+    .custom-orders { padding: 80px 0; background-color: #f8f9fa; }
+    .form-container {
+      max-width: 700px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+    .form-group { margin-bottom: 20px; }
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: var(--primary);
+    }
+    .form-control {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-size: 16px;
+      transition: var(--transition);
+      background: var(--light);
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(196, 69, 54, 0.1);
+    }
+    textarea.form-control { min-height: 120px; resize: vertical; }
+
+    /* Testimonials Section */
+    .testimonials { padding: 80px 0; }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 30px;
+      width: 100%;
+    }
+    .testimonial-card {
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+    .testimonial-content { margin-bottom: 20px; font-style: italic; color: var(--muted); }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .author-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: var(--secondary-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .author-info h4 { color: var(--primary); margin-bottom: 5px; }
+    .author-info p { color: var(--muted); font-size: 14px; }
+
+    /* Footer */
+    footer { background-color: var(--primary); color: white; padding: 60px 0 30px; }
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+      width: 100%;
+    }
+    .footer-column h3 {
+      font-size: 1.13rem;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+      font-weight: 700;
+    }
+    .footer-column h3::after {
+      content: '';
+      position: absolute;
+      width: 40px;
+      height: 2px;
+      background-color: var(--accent);
+      bottom: 0;
+      left: 0;
+    }
+    .footer-links { list-style: none; padding-left: 0; }
+    .footer-links li { margin-bottom: 10px; }
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      transition: var(--transition);
+      font-size: 0.98rem;
+      display: inline-block;
+    }
+    .footer-links a:hover { color: white; padding-left: 5px; }
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      color: white;
+      text-decoration: none;
+      transition: var(--transition);
+      font-size: 1.1rem;
+    }
+    .social-links a:hover { background-color: var(--accent); transform: translateY(-3px); }
+    .footer-bottom {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 14px;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 1100px) {
+      .container { max-width: 98vw; }
+      .products-grid, .testimonials-grid, .footer-content {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+      .form-container { max-width: 98vw; }
+    }
+    @media (max-width: 900px) {
+      .header-content { flex-direction: row; }
+      nav ul {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100vw;
+        background-color: white;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 0;
+        box-shadow: var(--shadow);
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: var(--transition);
+        pointer-events: none;
+        z-index: 1100;
+      }
+      nav ul.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: all;
+      }
+      .mobile-menu-btn { display: block; }
+      .cart-drawer { width: 100vw; right: -100vw; }
+      .cart-drawer.open { right: 0; }
+      .testimonials-grid, .products-grid, .footer-content {
+        grid-template-columns: 1fr 1fr;
+      }
+      .hero { padding: 60px 0; }
+      .hero h2 { font-size: 2rem; }
+      .products, .custom-orders, .testimonials { padding: 60px 0; }
+    }
+    @media (max-width: 600px) {
+      .container { max-width: 100vw; padding: 0 8px; }
+      .form-container { padding: 20px; }
+      .products-grid, .testimonials-grid, .footer-content {
+        grid-template-columns: 1fr;
+      }
+      .hero-content { max-width: 98vw; }
+      .section-title h2 { font-size: 1.3rem; }
+      .hero h2 { font-size: 1.1rem; }
+      .hero p, .product-info h3, .product-info p, .form-group label, .testimonial-content { font-size: 0.9rem; }
+      .btn, .add-to-cart, .view-details { font-size: 0.9rem; }
+      .cart-drawer { width: 100vw; }
+    }
+    @media (max-width: 400px) {
+      html { font-size: 13px; }
+      .hero { min-height: 130px; padding: 25px 0; }
+      .cart-btn { right: 10px; bottom: 10px; width: 44px; height: 44px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <div class="brand">
+          <div class="logo">IB</div>
+          <div class="brand-text">
+            <h1>Indalo Boutique</h1>
+            <p>Luxury Wigs • Nails • Custom-made</p>
+          </div>
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <i class="fas fa-bars"></i>
+        </button>
+        <nav>
+          <ul id="navMenu">
+            <li><a href="#products">Products</a></li>
+            <li><a href="#custom">Custom Orders</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h2>Luxury Looks for Every Day</h2>
+        <p>Premium wigs, nails, and custom beauty products with nationwide delivery across South Africa</p>
+        <a href="#products" class="btn">Shop Collection</a>
+        <a href="#custom" class="btn btn-outline">Custom Order</a>
+      </div>
+    </div>
+  </section>
+  <!-- Products Section -->
+  <section class="products" id="products">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Products</h2>
+        <p>Discover our premium collection of wigs and nails, crafted with attention to detail and quality</p>
+      </div>
+      <div class="products-grid" id="productsGrid">
+        <!-- Products will be dynamically added here -->
+      </div>
+    </div>
+  </section>
+  <!-- Cart Button -->
+  <div class="cart-btn" id="cartBtn">
+    <i class="fas fa-shopping-cart"></i>
+    <div class="cart-count" id="cartCount">0</div>
+  </div>
+  <!-- Cart Drawer -->
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button class="close-cart" id="closeCart">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <!-- Cart items will be dynamically added here -->
+    </div>
+    <div class="cart-footer">
+      <div class="cart-totals">
+        <div>
+          <span>Subtotal:</span>
+          <span id="cartSubtotal">R0.00</span>
+        </div>
+        <div>
+          <span>Shipping:</span>
+          <span id="shippingAmount">R50.00</span>
+        </div>
+        <div class="cart-total">
+          <span>Total:</span>
+          <span id="cartTotal">R0.00</span>
+        </div>
+      </div>
+      <button class="btn" id="checkoutBtn" style="width: 100%; margin-bottom: 10px;">
+        Checkout with Yoco
+      </button>
+      <button class="btn btn-outline" id="clearCart" style="width: 100%; background: transparent; color: var(--primary); border-color: var(--border);">
+        Clear Cart
+      </button>
+    </div>
+  </div>
+  <!-- Custom Orders Section -->
+  <section class="custom-orders" id="custom">
+    <div class="container">
+      <div class="section-title">
+        <h2>Custom Orders</h2>
+        <p>Have something specific in mind? We create custom wigs and nails tailored to your preferences</p>
+      </div>
+      <div class="form-container">
+        <form id="customOrderForm">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number (WhatsApp)</label>
+            <input type="tel" id="phone" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="productType">Product Type</label>
+            <select id="productType" class="form-control" required>
+              <option value="">Select a product type</option>
+              <option value="wig">Wig</option>
+              <option value="nails">Nails</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="details">Details / Reference</label>
+            <textarea id="details" class="form-control" placeholder="Please describe your custom order requirements, including any reference images or specific details"></textarea>
+          </div>
+          <button type="submit" class="btn" style="width: 100%;">Submit Custom Order</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <!-- Testimonials Section -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-title">
+        <h2>Customer Testimonials</h2>
+        <p>See what our satisfied customers have to say about our products and service</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            "Beautiful wig, great fit and fast delivery. I get compliments every time I wear it! The quality exceeded my expectations."
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">T</div>
+            <div class="author-info">
+              <h4>Thandi M.</h4>
+              <p>Cape Town</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            "Loved the acrylic set — neat, durable and the colour matched perfectly. Will definitely order again. Great customer service!"
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">C</div>
+            <div class="author-info">
+              <h4>Claire B.</h4>
+              <p>Durban</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            "The custom wig I ordered was exactly what I wanted. They paid attention to all my specifications and delivered on time. Highly recommend!"
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">L</div>
+            <div class="author-info">
+              <h4>Lerato K.</h4>
+              <p>Johannesburg</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Indalo Boutique</h3>
+          <p>Luxury wigs, nails, and custom beauty products with nationwide delivery across South Africa.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#products">Products</a></li>
+            <li><a href="#custom">Custom Orders</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#">Shipping Policy</a></li>
+            <li><a href="#">Returns & Refunds</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contact Us</h3>
+          <ul class="footer-links">
+            <li><i class="fas fa-phone"></i> +27 64 060 0460</li>
+            <li><i class="fas fa-envelope"></i> info@indaloboutique.co.za</li>
+            <li><i class="fas fa-map-marker-alt"></i> Nationwide Delivery, South Africa</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Indalo Boutique. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    // Product data
+    const products = [
+      { id: 1, name: "Luxury Lace Front Wig", price: 850, image: "images/waves/IMG-20250921-WA0005.jpg", category: "wig" },
+      { id: 2, name: "Premium Human Hair Wig", price: 1200, image: "images/waves/IMG-20250921-WA0006.jpg", category: "wig" },
+      { id: 3, name: "Short Hair Wig", price: 350, image: "images/waves/IMG-20250921-WA0009.jpg", category: "wig" },
+      { id: 4, name: "Blonde End Wig", price: 450, image: "images/waves/IMG-20250921-WA0010.jpg", category: "wig" },
+      { id: 5, name: "Silky Straight Wig", price: 950, image: "images/waves/IMG-20250921-WA0011.jpg", category: "wig" },
+      { id: 6, name: "Curly Wig", price: 400, image: "images/waves/IMG-20250921-WA0012.jpg", category: "wig" },
+      { id: 7, name: "Curly Short Wig", price: 300, image: "images/waves/IMG-20250921-WA0013.jpg", category: "wig" },
+      { id: 8, name: "Straight Wig", price: 250, image: "images/waves/IMG-20250921-WA0014.jpg", category: "nails" },
+      { id: 9, name: "12 inch Wig Combo", price: 150, image: "images/waves/IMG-20250921-WA0015.jpg", category: "wig" },
+      { id: 10, name: "Blond Wig", price: 200, image: "images/waves/IMG-20250921-WA0016.jpg", category: "wig" },
+      { id: 11, name: "Long Curly Wig", price: 300, image: "images/waves/IMG-20250921-WA0022.jpg", category: "wig" },
+      { id: 12, name: "Curly Wig", price: 250, image: "images/waves/IMG-20250921-WA0018.jpg", category: "wig" },
+      { id: 13, name: "Straight Wig", price: 200, image: "images/waves/IMG-20250921-WA0021.jpg", category: "wig" },
+      { id: 14, name: "Wavy Wig", price: 600, image: "images/waves/IMG-20250921-WA0020.jpg", category: "wig" },
+      { id: 15, name: "Black Straight Wig", price: 700, image: "images/waves/IMG-20250921-WA0021.jpg", category: "wig" }
+    ];
+    let cart = JSON.parse(localStorage.getItem('indaloCart')) || [];
+    const productsGrid = document.getElementById('productsGrid');
+    const cartBtn = document.getElementById('cartBtn');
+    const cartDrawer = document.getElementById('cartDrawer');
+    const closeCart = document.getElementById('closeCart');
+    const cartItems = document.getElementById('cartItems');
+    const cartCount = document.getElementById('cartCount');
+    const cartSubtotal = document.getElementById('cartSubtotal');
+    const cartTotal = document.getElementById('cartTotal');
+    const checkoutBtn = document.getElementById('checkoutBtn');
+    const clearCartBtn = document.getElementById('clearCart');
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.getElementById('navMenu');
+    const customOrderForm = document.getElementById('customOrderForm');
+    document.addEventListener('DOMContentLoaded', function() {
+      renderProducts();
+      updateCartUI();
+      mobileMenuBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        navMenu.classList.toggle('active');
+      });
+      cartBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        cartDrawer.classList.add('open');
+      });
+      closeCart.addEventListener('click', function() {
+        cartDrawer.classList.remove('open');
+      });
+      checkoutBtn.addEventListener('click', function() {
+        if (cart.length === 0) {
+          alert('Your cart is empty. Add some products before checking out.');
+          return;
+        }
+        alert('Redirecting to Yoco checkout... (This would integrate with Yoco payment gateway in a live implementation)');
+      });
+      clearCartBtn.addEventListener('click', function() {
+        cart = [];
+        saveCartToStorage();
+        updateCartUI();
+        cartDrawer.classList.remove('open');
+      });
+      customOrderForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Thank you for your custom order request! We will contact you shortly to discuss your requirements.');
+        customOrderForm.reset();
+      });
+      document.addEventListener('click', function(e) {
+        if (!cartDrawer.contains(e.target) && e.target !== cartBtn && !cartBtn.contains(e.target)) {
+          cartDrawer.classList.remove('open');
+        }
+        if (!navMenu.contains(e.target) && e.target !== mobileMenuBtn && !mobileMenuBtn.contains(e.target)) {
+          navMenu.classList.remove('active');
+        }
+      });
+    });
+    function renderProducts() {
+      productsGrid.innerHTML = '';
+      products.forEach(product => {
+        const productCard = document.createElement('div');
+        productCard.className = 'product-card';
+        productCard.innerHTML = `
+          <div class="product-image">
+            <img src="${product.image}" alt="${product.name}">
+          </div>
+          <div class="product-info">
+            <h3>${product.name}</h3>
+            <div class="product-price">R${product.price}</div>
+            <button class="btn add-to-cart" data-id="${product.id}">Add to Cart</button>
+          </div>
+        `;
+        productsGrid.appendChild(productCard);
+      });
+      document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', function() {
+          const productId = parseInt(this.getAttribute('data-id'));
+          addToCart(productId);
+        });
+      });
+    }
+    function addToCart(productId) {
+      const product = products.find(p => p.id === productId);
+      if (!product) return;
+      const existingItem = cart.find(item => item.id === productId);
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        cart.push({
+          id: product.id,
+          name: product.name,
+          price: product.price,
+          image: product.image,
+          quantity: 1
+        });
+      }
+      saveCartToStorage();
+      updateCartUI();
+      const confirmation = document.createElement('div');
+      confirmation.textContent = `${product.name} added to cart!`;
+      confirmation.style.position = 'fixed';
+      confirmation.style.top = '20px';
+      confirmation.style.right = '20px';
+      confirmation.style.backgroundColor = 'var(--accent)';
+      confirmation.style.color = 'white';
+      confirmation.style.padding = '10px 20px';
+      confirmation.style.borderRadius = '4px';
+      confirmation.style.zIndex = '1001';
+      confirmation.style.boxShadow = 'var(--shadow)';
+      document.body.appendChild(confirmation);
+      setTimeout(() => {
+        document.body.removeChild(confirmation);
+      }, 3000);
+    }
+    function updateCartUI() {
+      cartItems.innerHTML = '';
+      if (cart.length === 0) {
+        cartItems.innerHTML = '<p style="text-align: center; color: var(--muted); padding: 20px 0;">Your cart is empty</p>';
+        cartCount.textContent = '0';
+        cartSubtotal.textContent = 'R0.00';
+        cartTotal.textContent = 'R0.00';
+        return;
+      }
+      let subtotal = 0;
+      cart.forEach((item, index) => {
+        const itemTotal = item.price * item.quantity;
+        subtotal += itemTotal;
+        const cartItem = document.createElement('div');
+        cartItem.className = 'cart-item';
+        cartItem.innerHTML = `
+          <div class="cart-item-image">
+            <img src="${item.image}" alt="${item.name}">
+          </div>
+          <div class="cart-item-details">
+            <h4>${item.name}</h4>
+            <div class="cart-item-price">R${item.price}</div>
+            <div class="cart-item-actions">
+              <button class="quantity-btn decrease" data-index="${index}">-</button>
+              <span>${item.quantity}</span>
+              <button class="quantity-btn increase" data-index="${index}">+</button>
+              <button class="remove-item" data-index="${index}">
+                <i class="fas fa-trash"></i>
+              </button>
+            </div>
+          </div>
+        `;
+        cartItems.appendChild(cartItem);
+      });
+      document.querySelectorAll('.decrease').forEach(button => {
+        button.addEventListener('click', function() {
+          const index = parseInt(this.getAttribute('data-index'));
+          decreaseQuantity(index);
+        });
+      });
+      document.querySelectorAll('.increase').forEach(button => {
+        button.addEventListener('click', function() {
+          const index = parseInt(this.getAttribute('data-index'));
+          increaseQuantity(index);
+        });
+      });
+      document.querySelectorAll('.remove-item').forEach(button => {
+        button.addEventListener('click', function() {
+          const index = parseInt(this.getAttribute('data-index'));
+          removeFromCart(index);
+        });
+      });
+      const shipping = 50;
+      const total = subtotal + shipping;
+      cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+      cartSubtotal.textContent = `R${subtotal.toFixed(2)}`;
+      cartTotal.textContent = `R${total.toFixed(2)}`;
+    }
+    function decreaseQuantity(index) {
+      if (cart[index].quantity > 1) {
+        cart[index].quantity -= 1;
+      } else {
+        cart.splice(index, 1);
+      }
+      saveCartToStorage();
+      updateCartUI();
+    }
+    function increaseQuantity(index) {
+      cart[index].quantity += 1;
+      saveCartToStorage();
+      updateCartUI();
+    }
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      saveCartToStorage();
+      updateCartUI();
+    }
+    function saveCartToStorage() {
+      localStorage.setItem('indaloCart', JSON.stringify(cart));
+    }
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          navMenu.classList.remove('active');
+          setTimeout(function() {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: 'smooth'
+            });
+          }, 50);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
